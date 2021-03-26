@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  elasticsearch:
+    restart: always
+    image: "elasticsearch:6.8.13"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - "./data:/usr/share/elasticsearch/data"
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    driver: bridge
