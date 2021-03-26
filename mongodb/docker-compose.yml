@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mongodb:
+    restart: always
+    image: "mongo:bionic"
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: myuser
+      MONGO_INITDB_USERNAME: myuser
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    volumes:
+      - "./data:/data/db"
+      - "./initdb.d:/docker-entrypoint-initdb.d"
