@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  solr:
+    restart: always
+    image: solr:latest
+    ports:
+     - "8983:8983"
+    volumes:
+      - "./data:/var/solr"
+      - "./security.json:/var/solr/data/security.json"

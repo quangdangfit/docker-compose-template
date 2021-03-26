@@ -1,0 +1,41 @@
+{
+  "authentication":{
+    "blockUnknown":true,
+    "class":"solr.BasicAuthPlugin",
+    "credentials":{
+      "solr":"eW2UbTQR2kPHiX6hOSZamZhP7vxuBAMJ0GbPhcXCh2k= 9sGWlMJgkZURk0qAUzy7/KtPt7D+IqRMh7gFwiWsPEY=",
+      "solrread":"lBhV7YeAof8G/MYJx6/w5KlMpeTzly1VReGQD+2Oxd0= vTIg/ehW/JqZlLUKIIR1X3RS4lvQaQWVqjfqT4Vy6lg="},
+    "realm":"My Solr users",
+    "forwardCredentials":false,
+    "":{"v":0}},
+  "authorization":{
+    "class":"solr.RuleBasedAuthorizationPlugin",
+    "permissions":[
+      {
+        "name":"read",
+        "role":"*"},
+      {
+        "name":"schema-read",
+        "role":"*"},
+      {
+        "name":"config-read",
+        "role":"*"},
+      {
+        "name":"collection-admin-read",
+        "role":"*"},
+      {
+        "name":"metrics-read",
+        "role":"*"},
+      {
+        "name":"core-admin-read",
+        "role":"*"},
+      {
+        "name":"collection-admin-read",
+        "path":"/select",
+        "role":"dev"},
+      {
+        "name":"all",
+        "role":"admin"}],
+    "user-role":{
+      "solr":"admin",
+      "solrread":"dev"}}}
