@@ -11,4 +11,11 @@ Docker Compose Sample
 - `Kafka`
 
 ### Start
-`docker-compose up -d`
+`cd /path/of/application`  
+`docker-compose up`
+
+### example
+`cd redis`  
+`docker-compose up`
+
+![](https://i.imgur.com/zmkqg3U.png)
