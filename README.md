@@ -1,5 +1,5 @@
-# docker-compose-sample
-Docker Compose Sample
+# docker-compose-template
+Docker Compose Template
 
 ### Contains docker images:
 - `RabbitMQ`
