@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  redis:
+    restart: always
+    image: "redis:alpine"
+    command: redis-server --requirepass t4H793ZvT6RjsfWE
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./storage/redis_data:/data"
+
+  mysql:
+    restart: always
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./storage/mysql_data/data:/var/lib/mysql"
+    env_file:
+      - ../.env
+
+  rabbitmq:
+    restart: always
+    image: "masstransit/rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - "./storage/rabbitmq:/var/lib/rabbitmq"
+    env_file:
+      - ../.env
+
+  mongodb:
+    restart: always
+    image: "mongo:bionic"
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./storage/mongodb_data:/data/db"
+    env_file:
+      - ../.env
+
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - ../.env
